@@ -1,7 +1,13 @@
-
 export const config = {
-    API_URL: process.env.REACT_APP_API_URL  || 'http://localhost:3000/api/v1',
-    env: process.env.REACT_APP_ENV  || 'development',
-    version: process.env.REACT_APP_VERSION || '1.0.0',
+    API_URL: import.meta.env.VITE_API_URL,
+    env: import.meta.env.VITE_APP_ENV,
+    version: import.meta.env.VITE_APP_VERSION,
+    /*firebase: {
+        apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+        appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    }*/
 };
-

@@ -49,10 +49,7 @@ export async function loginUser(credentials: any) {
     try {
         const response = await api.post('/users/login', credentials);
         return response.data;
-    } catch (error) {
-        if (error.response) {
-            return error.response.data;
-        }
+    } catch (error: unknown) {
         return {
             code: 500,
             message: "Error en el servidor. Intenta más tarde.",
@@ -65,11 +62,12 @@ export async function post(user: any) {
     try {
         const response = await api.post('/users', user);
         return response.data;
-    } catch (error) {
-        if (error.response) {
-            console.error("Respuesta del servidor:", error.response);
-        }
-        throw error;
+    } catch (error: unknown) {
+        return {
+            code: 500,
+            message: "Error en el servidor. Intenta más tarde.",
+            data: null,
+        };
     }
 }
 

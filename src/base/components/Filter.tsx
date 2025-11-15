@@ -31,7 +31,7 @@ const Filter = () => {
         mt: 4,
       }}
     >
-      <Box sx={{ width: "80%" }}>
+      <Box sx={{ width: "90%" }}>
         {/* CONTENEDOR EN FILA */}
         <Box
           sx={{
